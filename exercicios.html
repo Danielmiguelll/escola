@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Daniel</title>
+  <style>
+ /* Estilo para navegadores baseados em WebKit, como Chrome e Safari */
+::-webkit-scrollbar {
+  width: 1px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: black; /* Torna o polegar (parte deslizante) transparente */
+}
+
+/* Estilo para navegadores baseados em Firefox */
+body {
+  scrollbar-width: thin;
+  scrollbar-color: transparent transparent; /* Torna a barra de rolagem transparente no Firefox */
+}
+
+/* Estilo para a parte deslizante da barra de rolagem no Firefox */
+body::-webkit-scrollbar-thumb {
+  background-color: black; /* Torna o polegar (parte deslizante) transparente no WebKit */
+}
+
+    body {
+      margin: 0;
+    }
+
+    iframe {
+      width: 100%;
+      height: 100vh;
+      border: none;
+    }
+  </style>
+</head>
+<body>
+  <iframe src="GUSTAVO.pdf" frameborder="0"></iframe>
+
+  <script>
+    function toggleFullScreen() {
+      const iframe = document.querySelector('iframe');
+      if (!document.fullscreenElement) {
+        iframe.requestFullscreen().catch(err => {
+          console.error(`Erro ao tentar entrar em tela cheia: ${err.message}`);
+        });
+      } else {
+        document.exitFullscreen();
+      }
+    }
+
+    document.addEventListener('dblclick', toggleFullScreen);
+  </script>
+</body>
+</html>
